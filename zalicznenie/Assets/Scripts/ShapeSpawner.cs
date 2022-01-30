@@ -5,12 +5,15 @@ using UnityEngine;
 public class ShapeSpawner : MonoBehaviour
 {
 
+    // Array that holds all the shapes
     public GameObject[] shapes;
 
     public void SpawnShape()
     {
+        // Generate a random index
         int shapeIndex = Random.Range(0, 6);
 
+        // Create the shape at the ShapeSpawners location
         Instantiate(shapes[shapeIndex],
             transform.position,
             Quaternion.identity);
@@ -19,6 +22,8 @@ public class ShapeSpawner : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
+        // Spawn the default first shape
         SpawnShape();
     }
 
